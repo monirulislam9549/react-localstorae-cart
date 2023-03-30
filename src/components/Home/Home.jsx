@@ -5,6 +5,9 @@ import './Home.css';
 
 const Home = () => {
     const [movies, setMovies] = useState([])
+    const handleWatchTime = (movie) => {
+        console.log(movie);
+    }
     useEffect(() => {
         const fetchData = async () => {
             const url = 'data.json';
@@ -26,6 +29,7 @@ const Home = () => {
                     movies.map(movie => <SingleCard
                         movie={movie}
                         key={movie.id}
+                        handleWatchTime={handleWatchTime}
                     ></SingleCard>)
                 }
             </div>

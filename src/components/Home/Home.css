@@ -6,6 +6,6 @@
 .movies-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-    margin: 120px 82px 0 104px;
+    gap: 30px;
+    margin: 100px 70px 0 100px;
 }

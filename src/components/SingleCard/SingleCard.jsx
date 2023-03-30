@@ -2,8 +2,9 @@ import React from 'react';
 import './SingleCard.css'
 
 const SingleCard = (props) => {
-    console.log(props);
-    const { poster, watchTime, movieName, description, imdbRating } = props.movie
+    const handleWatchTime = props.handleWatchTime;
+    // console.log(props);
+    const { poster, watchTime, movieName, description, imdbRating, price } = props.movie
 
     return (
         <div className='movie'>
@@ -14,9 +15,10 @@ const SingleCard = (props) => {
                 <div className='rating-time'>
                     <p>Rating: {imdbRating}</p>
                     <p>Watch Time: {watchTime} minute</p>
+                    <p>Booking Price:{price}</p>
                 </div>
             </div>
-            <button>Book Now</button>
+            <button onClick={() => handleWatchTime()}>Book Now</button>
         </div>
     );
 };

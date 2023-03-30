@@ -28,7 +28,7 @@
 
 .movie button {
     cursor: pointer;
-    background: #FFE0B3;
+    background: blue;
     border: 1px solid #95A0A7;
     border-radius: 0px 0px 8px 8px;
     width: 100%;

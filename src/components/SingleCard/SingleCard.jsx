@@ -18,7 +18,7 @@ const SingleCard = (props) => {
                     <p>Booking Price:{price}</p>
                 </div>
             </div>
-            <button onClick={() => handleWatchTime()}>Book Now</button>
+            <button onClick={() => handleWatchTime(watchTime)}>Book Now</button>
         </div>
     );
 };

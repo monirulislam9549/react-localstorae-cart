@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import SideCart from '../SideCart/SideCart';
 import SingleCard from '../SingleCard/SingleCard';
 import './Home.css';
 
 
 const Home = () => {
     const [movies, setMovies] = useState([])
-    const handleWatchTime = (movie) => {
-        console.log(movie);
+    const [watchTime, setWatchTime] = useState(0)
+    const handleWatchTime = (time) => {
+        const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"))
+        if (previousWatchTime) {
+            const sum = previousWatchTime + time
+            localStorage.setItem("watchTime", sum)
+            setWatchTime(sum)
+        } else {
+            localStorage.setItem("watchTime", time)
+            setWatchTime(time)
+        }
     }
     useEffect(() => {
         const fetchData = async () => {
@@ -34,7 +44,7 @@ const Home = () => {
                 }
             </div>
             <div className='cart-container'>
-                Movie Cart
+                <SideCart watchTime={watchTime}></SideCart>
             </div>
         </div>
     );
